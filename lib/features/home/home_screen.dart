@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                       model.scrollToBottom();
                     });
                   },
-                  onChanged: (value) => model.notifyListeners(),
+                  onChanged: (value) => model.uiResfresh(),
                   ontap: () {
                     if (model.isListening) {
                       model.stopListening();
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
         IconButton(
           icon: const Icon(Icons.refresh, color: Color(0xFF666666)),
           onPressed: () {
-            model.messages.clear();
+            model.clearMessagesList();
           },
         ),
       ],

@@ -92,7 +92,6 @@ class HomeViewModel extends ChangeNotifier {
     final response = await geminiService.getResponse(userMessage);
 
     isLoading = false;
-    // Replace placeholder with real response
     messages[messages.length - 1] = {
       "sender": "bot",
       "message": response ?? "Failed to get a response. Please try again.",
@@ -164,6 +163,15 @@ class HomeViewModel extends ChangeNotifier {
       TextPosition(offset: textController.text.length),
     );
 
+    notifyListeners();
+  }
+
+  clearMessagesList() {
+    messages.clear();
+    notifyListeners();
+  }
+
+  uiResfresh() {
     notifyListeners();
   }
 

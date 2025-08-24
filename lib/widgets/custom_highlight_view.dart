@@ -26,7 +26,6 @@ class CustomHighlightView extends StatelessWidget {
       width: double.infinity,
       child: Stack(
         children: [
-          // Highlighted code
           HighlightView(
             code,
             language: language,
@@ -40,44 +39,16 @@ class CustomHighlightView extends StatelessWidget {
           ),
 
           // Top bar with language & copy button
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: Colors.black54,
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(12),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    language.toUpperCase(),
-                    style: const TextStyle(
-                      color: Colors.white70,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  IconButton(
-                    icon: const Icon(
-                      Icons.copy,
-                      color: Colors.white70,
-                      size: 18,
-                    ),
-                    onPressed: () {
-                      Clipboard.setData(ClipboardData(text: code));
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Code copied!")),
-                      );
-                    },
-                  ),
-                ],
-              ),
+          Align(
+            alignment: Alignment.topRight,
+            child: IconButton(
+              icon: const Icon(Icons.copy, color: Colors.white70, size: 18),
+              onPressed: () {
+                Clipboard.setData(ClipboardData(text: code));
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(const SnackBar(content: Text("Code copied!")));
+              },
             ),
           ),
         ],

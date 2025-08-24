@@ -40,7 +40,7 @@ class ChatScreen extends StatelessWidget {
                 profileImage: isUser
                     ? "assets/images/asad.PNG"
                     : "assets/images/bot.png",
-                senderName: isUser ? "You" : "Rak-GPT",
+                senderName: isUser ? "You" : "Bot",
                 message: message.replaceAll(regex, "").trim(),
               ),
               const SizedBox(height: 6),

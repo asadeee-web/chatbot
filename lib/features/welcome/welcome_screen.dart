@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:chatbot/features/home/home_view_model.dart';
 import 'package:chatbot/widgets/custom_prompt_card.dart';
@@ -14,31 +15,37 @@ class WelcomeScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            "assets/images/bot.png",
-            height: 150,
-            width: 150,
-            fit: BoxFit.contain,
+          SlideInDown(
+            child: Image.asset(
+              "assets/images/bot.png",
+              height: 150,
+              width: 150,
+              fit: BoxFit.contain,
+            ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32.0),
-            child: Text(
-              "Hello mate, I’m ready to help you.",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF1E293B),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: SlideInDown(
+              child: const Text(
+                "Hello mate, I’m ready to help you.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF1E293B),
+                ),
               ),
             ),
           ),
           const SizedBox(height: 8),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32.0),
-            child: Text(
-              'Ask me anything what\'s are on your mind. Am here to assist you!',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 14, color: Color(0xFF64748B)),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: SlideInDown(
+              child: const Text(
+                'Ask me anything what\'s are on your mind. Am here to assist you!',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14, color: Color(0xFF64748B)),
+              ),
             ),
           ),
           const SizedBox(height: 32),
@@ -64,7 +71,7 @@ class WelcomeScreen extends StatelessWidget {
                       model.onGetAnswer(desc);
                     },
                     onEditPrompt: (desc) {
-                      model.onGetAnswer(desc);
+                      model.onEditPrompt(desc);
                     },
                   ),
                 );
