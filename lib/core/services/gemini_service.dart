@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class GeminiService {
-  static const String _apiKey = 'AIzaSyDyg-xzptd5HCE9bM5vC2Ju9akMXn6xQgc';
+  //TODO:API KEY REPLACEMENT
+  static const String _apiKey = "Put Your api key here ";
   static const String _apiUrl =
       'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=$_apiKey';
 

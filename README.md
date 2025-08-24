@@ -1,16 +1,38 @@
-# chatbot
+## 🚀 Getting Started
 
-A new Flutter project.
+To get started with the project, clone the repository and run it locally:
+Before Run it locally make sure to put the api key , lib/core/services/gemini_services.dart
 
-## Getting Started
+```bash
+git clone https://github.com/asadeee-web/chatbot.git
+cd chatbot
+flutter pub get
+flutter run
 
-This project is a starting point for a Flutter application.
+```
 
-A few resources to get you started if this is your first Flutter project:
+## 📱 Preview
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Here’s a sneak peek of the app design:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![App Mockup](mockup.png)
+
+---
+
+
+## 🛠️ Tech Stack
+
+- **Flutter** (Frontend)  
+- **Gemini** (Integrated Api)  
+- **Provider** (State Management)  
+- **Dart** (Programming Language)  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork this repo and submit a PR.
+
+---
+
+
