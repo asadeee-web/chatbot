@@ -129,8 +129,18 @@ class HomeViewModel extends ChangeNotifier {
 
     if (status.isGranted) {
       await speechToText.initialize(
-        onStatus: (status) => print('Speech status: $status'),
-        onError: (error) => print('Speech error: $error'),
+        onStatus: (status) {
+          print('Speech status: $status');
+          if (status == "done" || status == "notListening") {
+            isListening = false;
+            notifyListeners();
+          }
+        },
+        onError: (error) {
+          print('Speech error: $error');
+          isListening = false;
+          notifyListeners();
+        },
       );
     } else {
       print("Microphone permission not granted");
