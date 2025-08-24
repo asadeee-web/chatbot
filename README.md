@@ -15,7 +15,7 @@ flutter run
 
 Here’s a sneak peek of the app design:
 
-![App Mockup](mockup.png)
+![App Mockup](readme.png)
 
 ---
 
